@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "materialize-css/dist/css/materialize.min.css";
+import M from "materialize-css/dist/js/materialize.min.js";
+import { Button, Card, Row, Col, Icon } from "react-materialize";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    M.AutoInit();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Button
+      className="red"
+      fab={{
+        direction: "left",
+        hoverEnabled: false,
+      }}
+      floating
+      large
+      node="button"
+    >
+      <Button
+        className="red"
+        floating
+        icon={<Icon>insert_chart</Icon>}
+        node="button"
+      />
+      <Button
+        className="yellow darken-1"
+        floating
+        icon={<Icon>format_quote</Icon>}
+        node="button"
+      />
+      <Button
+        className="green"
+        floating
+        icon={<Icon>publish</Icon>}
+        node="button"
+      />
+      <Button
+        className="blue"
+        floating
+        icon={<Icon>attach_file</Icon>}
+        node="button"
+      />
+    </Button>
   );
-}
+};
 
 export default App;
